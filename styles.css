@@ -732,7 +732,7 @@ footer{
 
         .slideshow-container img {
         width: 100%;
-        height: fit-content;
+        max-height: 200px;
         object-fit: cover;
         border-radius: 15px;
 }
