@@ -137,5 +137,73 @@ if (close){
 nav.classList.remove('active');
     })
 }
+// shop page 
+            
+function goToShopPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#shoes';
+}
+
+function goToShirtPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#clothes';
+}
+
+function goToJewelryPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#jewelry';
+}
+            
+function goToFoodPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#food';
+}
 
 
+function culiniaryDelightsPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#culiniary-delights';
+}
+
+function drinksPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#drinks';
+}
+
+function goToSportWearsPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#sport-wears';
+}
+
+function othersPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#others';
+}
+
+function newArrivalsPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#new-arrivals';
+}
+
+function newArrivalsPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#new-arrivals';
+}
+
+function backToSchoolDealsPage() {
+    // Navigate to the shop page with the corresponding section
+    window.location.href = './shop.html#back-to-school-deals';
+}
+
+function comingSoonPage() {
+    // Navigate to the shop page with the corresponding section
+window.location.href = './shop.html#coming-soon-page';
+}
+
+
+// shop page
+
+// function goToShopPage(shop) {
+//     // Navigate to the shop page with the corresponding section
+//     window.location.href = 'shop/#shoes';
+// }
