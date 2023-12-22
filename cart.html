@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LawPasChris shopping mall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="" class="logo" alt="">LawPasChris</a>
+    
+         <div>
+            <ul id="navbar">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="About.html">AboutUs</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Checkout.html">CheckOut</a></li>
+                <li><a href="MyAccount.html">MyAccount</a></li>
+                <a href="./cart.html" onclick="goToCart()">Cart <span id="cartCount">0</span></a>
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+                <p class="movedarkmode">darkmode</p>
+           
+            </ul>
+            
+         </div>
+         <div id="mobile">
+            <a href="Cart.html"><i class="far fa-shopping-bag"></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+         </div>
+
+    </section>
+    <div id="cartPage" style="display: none;">
+        <h1>Cart Page</h1>
+        <div id="cartItems"></div>
+        <p>Total Price: $<span id="totalPrice">0.00</span></p>
+        <button onclick="goToPage('shop')">Go to Shopping</button>
+        <button onclick="checkout()">Checkout</button>
+      </div>
+
+     <!-- Cart Page -->
+     <!-- <div id="cartPage">
+        <h1>Cart Page</h1>
+        <div id="cartItems"></div>
+        <p>Total Price: $<span id="totalPrice">0.00</span></p>
+        <button onclick="goToShop()">Go to Shopping</button>
+      </div>
+    </div> -->
+  
+    <script src="/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

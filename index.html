@@ -11,19 +11,41 @@
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="" class="logo" alt="">LawPasChris</a>
+        <a href="./index.html"><img src="" class="logo" alt="">LawPasChris</a>
     
          <div>
             <ul id="navbar">
                 <li><a class="active" href="./index.html">Home</a></li>
                 <li><a href="./shop.html">Shop</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="Blog.html">Blog</a></li>
+                <li class="sub-categories-container">
+                    <a href="categories.html">Categories &#x21d3;</a>
+                    <div class="sub-categories">
+                        <div>
+                            <a href="./shoes.html">Shoes</a>
+                            <a href="./clothes.html">Clothes</a>
+                            <a href="./jewelries.html">jewelries</a>
+                        </div>
+                        <div>
+                            <a href="./food.html">food</a>
+                            <a href="./sportWears.html">sportWears</a>
+                            <a href="./culinaryDelights.html">culiniaryDelights</a>
+                        </div>
+                        <div>
+                            <a href="./drinksAndWater.html">drinks and water</a>
+                            <a href="./others.html">others</a>
+                            <a href="./newArrivals.html">newArrivals</a>
+                        </div>
+                        <div>
+                            <a href="./comingSoon.html">comingSoon</a>
+                        </div>
+                    </div>
+                </li>                
+                      <li><a href="Blog.html">Blog</a></li>
                 <li><a href="About.html">AboutUs</a></li>
                 <li><a href="Contact.html">Contact</a></li>
                 <li><a href="Checkout.html">CheckOut</a></li>
                 <li><a href="MyAccount.html">MyAccount</a></li>
-                <li id="lg-bag"><a href="Cart.html"><i class="far fa-shopping-bag"></i></a></li>
+                <a href="./cart.html" onclick="goToCart()">Cart <span id="cartCount">0</span></a>
                 <a href="#" id="close"><i class="far fa-times"></i></a>
                 <p class="movedarkmode">darkmode</p>
            
@@ -275,7 +297,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Shop Now</button>
+                    <button onclick="goToShirtPage()">Shop Now</button>
                 </div>
             </div>
 
@@ -807,6 +829,7 @@
     </div>
    </div> 
 
+  
 
    <div id="culiniary-delights" class="category">
     <h2>culiniary delights</h2>

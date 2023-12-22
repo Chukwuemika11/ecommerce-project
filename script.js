@@ -200,10 +200,110 @@ function comingSoonPage() {
 window.location.href = './shop.html#coming-soon-page';
 }
 
+// cart page 
 
-// shop page
+  let cartItems = [];
 
-// function goToShopPage(shop) {
-//     // Navigate to the shop page with the corresponding section
-//     window.location.href = 'shop/#shoes';
-// }
+  function addToCart(itemText, itemPrice, itemImage) {
+    const existingItem = cartItems.find(item => item.text === itemText);
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      const newItem = {
+        text: itemText,
+        price: itemPrice,
+        image: itemImage,
+        quantity: 1
+      };
+      cartItems.push(newItem);
+    }
+
+    updateCartCount();
+  }
+
+  function updateCartCount() {
+    document.getElementById('cartCount').innerText = calculateTotalQuantity();
+  }
+
+  function calculateTotalQuantity() {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  }
+
+  function displayCartItems() {
+    const cartItemsDiv = document.getElementById('cartItems');
+    const totalPriceSpan = document.getElementById('totalPrice');
+    let totalPrice = 0;
+
+    if (cartItems.length > 0) {
+      cartItemsDiv.innerHTML = ''; // Clear existing content
+
+      cartItems.forEach((item, index) => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cartItem';
+        cartItem.innerHTML = `
+          <img src="${item.image}" alt="${item.text}">
+          <p>${item.text}</p>
+          <p>Quantity: ${item.quantity}</p>
+          <p>$${(item.price * item.quantity).toFixed(2)}</p>
+          <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+
+        cartItemsDiv.appendChild(cartItem);
+        totalPrice += item.price * item.quantity;
+      });
+    } else {
+      cartItemsDiv.innerHTML = 'No items in the cart.';
+    }
+
+    totalPriceSpan.innerText = totalPrice.toFixed(2);
+  }
+
+
+
+  function removeFromCart(index) {
+    cartItems.splice(index, 1);
+    updateCartCount();
+  displayCartItems();
+}
+
+function goToPage(page) {
+  // Switch to the specified page
+  document.getElementById('shopPage').style.display = page === 'shop' ? 'block' : 'none';
+  document.getElementById('cartPage').style.display = page === 'cart' ? 'block' : 'none';
+
+  if (page === 'cart') {
+    // Call displayCartItems when switching to the cart page
+    displayCartItems();
+  }
+
+  // Add similar logic for other pages
+}
+
+  
+
+function checkout() {
+  // Implement your checkout logic here
+  alert('Checkout functionality will be implemented.');
+}
+
+
+// Call displayCartItems when the cart page loads
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.location.href.includes('cart.html')) {
+    displayCartItems();
+  }
+});
+
+
+// categories page
+// scrolling
+  // const scrollingContainer = document.querySelector('.scrolling');
+
+  //   scrollingContainer.addEventListener('mouseenter', () => {
+  //     scrollingContainer.classList.remove('scrolling');
+  //   });
+
+  //   scrollingContainer.addEventListener('mouseleave', () => {
+  //     scrollingContainer.classList.add('scrolling');
+  //   });
