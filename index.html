@@ -15,8 +15,8 @@
     
          <div>
             <ul id="navbar">
-                <li><a class="active" href="./index.html">Home</a></li>
-                <li><a href="./shop.html">Shop</a></li>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="Shop.html" onclick="goToShop()">Shop</a></li>
                 <li class="sub-categories-container">
                     <a href="categories.html">Categories &#x21d3;</a>
                     <div class="sub-categories">
@@ -28,37 +28,39 @@
                         <div>
                             <a href="./food.html">food</a>
                             <a href="./sportWears.html">sportWears</a>
-                            <a href="./culinaryDelights.html">culiniaryDelights</a>
+                            <a href="culinaryDelights.html">culiniaryDelights</a>
+                            <a href="./comingSoon.html">comingSoon</a>
+                         
                         </div>
                         <div>
                             <a href="./drinksAndWater.html">drinks and water</a>
                             <a href="./others.html">others</a>
                             <a href="./newArrivals.html">newArrivals</a>
                         </div>
-                        <div>
-                            <a href="./comingSoon.html">comingSoon</a>
-                        </div>
+                        <!-- <div class="block"> -->
+                        <!-- </div> -->
                     </div>
-                </li>                
-                      <li><a href="Blog.html">Blog</a></li>
+                </li>  
+                <div id="down">
+                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="About.html">AboutUs</a></li>
                 <li><a href="Contact.html">Contact</a></li>
                 <li><a href="Checkout.html">CheckOut</a></li>
                 <li><a href="MyAccount.html">MyAccount</a></li>
-                <a href="./cart.html" onclick="goToCart()">Cart <span id="cartCount">0</span></a>
+                <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
+                <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
                 <a href="#" id="close"><i class="far fa-times"></i></a>
                 <p class="movedarkmode">darkmode</p>
-           
+            </div>
             </ul>
             
          </div>
          <div id="mobile">
-            <a href="Cart.html"><i class="far fa-shopping-bag"></i></a>
+            <a href="Cart.html"><i class="far fa-shopping-bag "></i></a>
            <i id="bar" class="fas fa-outdent"></i>
          </div>
 
-    </section>
-    
+    </section>    
     <section class="randomImages">
         <div class="slideshow-container">
             <!-- Replace these image URLs with your actual image URLs -->
@@ -2136,9 +2138,6 @@
               </div>
         </footer>
         
-        
-        
-
     <script src="script.js"></script>
 </body>
 </html>

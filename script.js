@@ -1,20 +1,29 @@
 let slideIndex = 0;
 
 function showSlides() {
-    let i;
     const slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+
+    // Check if there are slides
+    if (slides.length > 0) {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        // Check if the current slideIndex is within the valid range
+        if (slideIndex <= slides.length) {
+            slides[slideIndex - 1].style.display = "block";
+        }
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
+
     setTimeout(showSlides, 2000); // Change slide every 2 seconds
 }
 
-showSlides(); // Initial call to start the slidesho5
+showSlides(); // Initial call to start the slideshow
 
 
 function scrollToCategory(category) {

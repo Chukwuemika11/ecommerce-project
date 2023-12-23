@@ -43,6 +43,8 @@
    flex-direction: row;
 
 }
+
+
 .movedarkmode{
     padding-left: none;
 }
@@ -86,6 +88,8 @@ color: #088178;
 
 #close{
    display: none;
+   padding-left: none;
+
 }
 /* header end */
 
@@ -544,6 +548,15 @@ footer {
     transition: transform 0.3s ease;
 }
 
+#down{
+    margin-top: 0 !important;
+    display: flex;
+}
+
+.shiftDown{
+    /* margin: 10px 0px; */
+    padding-left: none !important;
+}
 .circular-image:hover{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adjust the shadow as needed */
     transform: scale(0.8);
@@ -694,9 +707,9 @@ text-align: center;}
     justify-content: flex-start;
     position: fixed;
     top: 0;
-    right: -400px;
-    height: 97.90vh;
-    width: 350px;
+    right: -1200px;
+    height: 126.90vh;
+    width: 100%;
     background-color: #83adab ;
     box-shadow: 5px 5px 10px #888888;
     padding: 80px 0 0 10px;
@@ -711,7 +724,11 @@ text-align: center;}
 }
 
  #navbar li{
-    margin-bottom: 40px;      
+    margin-bottom: 30px;      
+ }
+
+ #navbar li a{
+    font-size: 30px;
  }
 
  #mobile{
@@ -733,7 +750,7 @@ text-align: center;}
     top:30px;
     color: #222;
     font-size: 24px;
-    padding-left: 30px;
+    padding-left: 450px;
   }
 
   .movedarkmode{
@@ -786,6 +803,7 @@ footer{
 
 .movedarkmode{
     padding-left: 30px;
+    padding-top: 20px;
 }
 
 
@@ -904,6 +922,59 @@ footer{
         border-radius: 12px;
     }
 
+    /* categories */
+.sub-categories-container {
+    position: none;
+    display: block;
+    /* padding-top: 2px; */
+}
+
+/* Style for the dropdown content (hidden by default) */
+.sub-categories {
+    display: flex;
+    position: none;
+    background-color: none; /* White background */
+    box-shadow: none; /* Box shadow for a subtle effect */
+    z-index: none; 
+    width: 0px;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+
+}
+
+.sub-categories a {
+    color: #333 !important;  /* Text color */
+    padding: 46px;
+    display: block;
+    text-decoration: none;
+    margin-left: 0px;
+    padding-top: 20px;
+}
+
+/* Change color on hover for the dropdown links */
+.sub-categories a:hover {
+    color: #5d7a7a !important;
+    transform: scale(1.2);
+    /* content: none !important; */
+   /* Light gray background on hover */
+}
+
+/* Show the dropdown content when hovering over the dropdown link */
+.sub-categories-container:hover .sub-categories {
+    display: none !important;
+}
+
+.shiftDown{
+    /* margin: 10px 0px; */
+    padding-left: 30px;
+}
+
+#down{
+    margin-top: 370px !important ;
+    display: block;
+    font-size: 30px;
+}
   }
 
   @media (max-width: 477px){
@@ -924,17 +995,24 @@ footer{
           justify-content: flex-start;
           position: fixed;
           top: 0;
-          right: -400px;
-          height: 97.90vh;
-          width: 270px;
+          right: -500px;
+          height: 127.90vh;
+          /* width: 270px; */
+          width: 100%;
           background-color: #83adab ;
           box-shadow: 5px 5px 10px #888888;
           padding: 80px 0 0 10px;
           transition: 0.5s;
           border-radius: 5px;
           margin-top: 0px;
-          padding-left: 2px;
+          padding-left: 0px;
        }
+
+      
+
+    /* #down{
+        padding: 90px 0px !important;
+    } */
 
        #navbar.active {
         right: -50px;
@@ -962,7 +1040,8 @@ footer{
           top:30px;
           color: #222;
           font-size: 24px;
-          padding-left: 30px;
+          /* padding-left: 230px; */
+          padding-left: 0px;
         }
      
         .randomImages {
@@ -1009,8 +1088,9 @@ footer{
     padding: 20px 10px;
 }
 
-.movedarkmode{
+.movedarkmode {
     padding-left: 30px;
+    padding-top: 30px;
 }
 
 
@@ -1126,7 +1206,61 @@ footer{
     color: #333;
     padding: 5px 10px;
 }
-  
+
+/* categories */
+.sub-categories-container {
+    position: none;
+    display: block;
+    /* padding-top: 2px; */
+}
+
+/* Style for the dropdown content (hidden by default) */
+.sub-categories {
+    display: flex;
+    position: none;
+    background-color: none; /* White background */
+    box-shadow: none; /* Box shadow for a subtle effect */
+    z-index: none; 
+    width: 0px;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+
+}
+
+.sub-categories a {
+    color: #333 !important;  /* Text color */
+    padding: 6px;
+    display: block;
+    text-decoration: none;
+    margin-left: 0px;
+    padding-top: 20px;
+}
+
+/* Change color on hover for the dropdown links */
+.sub-categories a:hover {
+    color: #5d7a7a !important;
+    transform: scale(1.2);
+    /* content: none !important; */
+   /* Light gray background on hover */
+}
+
+/* Show the dropdown content when hovering over the dropdown link */
+.sub-categories-container:hover .sub-categories {
+    display: none !important;
+}
+
+.shiftDown{
+    /* margin: 10px 0px; */
+    padding-left: 30px;
+}
+
+#down{
+    margin-top: 150px !important ;
+    display: block;
+}
+
     }
 
+    
 
