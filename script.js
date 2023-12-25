@@ -25,6 +25,13 @@ function showSlides() {
 
 showSlides(); // Initial call to start the slideshow
 
+const subCategoriesContainer = document.querySelector('.sub-categories');
+
+// Example: Toggle visibility
+// document.querySelector('.sub-categories-container a').addEventListener('click', () => {
+//     subCategoriesContainer.classList.toggle('visible');
+// });
+
 
 function scrollToCategory(category) {
     var categoryElement = document.getElementById(category);

@@ -744,14 +744,24 @@ text-align: center;}
    padding-left: 20px;
  }
 
- #close{
+ /* #close{
     display: initial;
     position: absolute;
     top:30px;
     color: #222;
     font-size: 24px;
     padding-left: 450px;
-  }
+  } */
+
+  #close {
+    display: block;
+    position: absolute;
+    top: 30px;
+    color: #222;
+    font-size: 24px;
+    /* padding-left: 230px; */
+    padding-left: 30px;
+}
 
   .movedarkmode{
     padding-left: 30px;
@@ -940,7 +950,8 @@ footer{
     border-radius: 0px;
     margin-left: 0px;
     padding-bottom: 10px;
-
+    padding-top:200px;
+    font-size: 30px;
 }
 
 .sub-categories a {
@@ -964,6 +975,44 @@ footer{
 .sub-categories-container:hover .sub-categories {
     display: none !important;
 }
+
+/* another sub-categories */
+
+.sub-categoriess {
+    display: flex;
+    position: none;
+    background-color: none; /* White background */
+    box-shadow: none; /* Box shadow for a subtle effect */
+    z-index: none; 
+    width: 0px;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding-bottom: 10px;
+
+}
+
+.sub-categoriess a {
+    color: #333 !important;  /* Text color */
+    padding: 46px;
+    display: block;
+    text-decoration: none;
+    margin-left: 0px;
+    padding-top: 20px;
+}
+
+/* Change color on hover for the dropdown links */
+.sub-categoriess a:hover {
+    color: #5d7a7a !important;
+    transform: scale(1.2);
+    /* content: none !important; */
+   /* Light gray background on hover */
+}
+
+/* Show the dropdown content when hovering over the dropdown link */
+.sub-categoriess-container:hover .sub-categories {
+    display: none !important;
+}
+
 
 .shiftDown{
     /* margin: 10px 0px; */
@@ -1034,15 +1083,19 @@ footer{
          padding-left: 20px;
        }
     
-       #close{
-          display: initial;
-          position: absolute;
-          top:30px;
-          color: #222;
-          font-size: 24px;
-          /* padding-left: 230px; */
-          padding-left: 0px;
+
+        
+        #close {
+            display: block;
+            position: absolute;
+            top: 30px;
+            color: #222;
+            font-size: 24px;
+            /* padding-left: 230px; */
+            padding-left: 30px;
         }
+        /* padding-left:0px */
+        /* display: initial; */
      
         .randomImages {
             display: block;
@@ -1209,10 +1262,12 @@ footer{
 
 /* categories */
 .sub-categories-container {
-    position: none;
+    position: absolute;
     display: block;
     /* padding-top: 2px; */
 }
+
+
 
 /* Style for the dropdown content (hidden by default) */
 .sub-categories {
@@ -1223,14 +1278,14 @@ footer{
     z-index: none; 
     width: 0px;
     border-radius: 0px;
-    margin-left: 0px;
+    margin-left: 29px;
     padding-bottom: 10px;
-
+    margin-top: 150px;
 }
 
 .sub-categories a {
     color: #333 !important;  /* Text color */
-    padding: 6px;
+    padding: 10px;
     display: block;
     text-decoration: none;
     margin-left: 0px;
@@ -1259,6 +1314,13 @@ footer{
     margin-top: 150px !important ;
     display: block;
 }
+
+/* #flex{
+    display: block !important;
+}
+#flex2{
+    display: block !important;
+} */
 
     }
 
