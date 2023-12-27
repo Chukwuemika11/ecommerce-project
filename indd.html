@@ -3,224 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Shoes Carousel</title>
+    <style>
+        .blog-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .read-more {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .hidden-text {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<style>
-    .carousel-container {
-    position: relative;
-    overflow: hidden;
-}
 
-.carousel-frame {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+<div class="blog-container">
+    <img src="image1.jpg" alt="Blog Image 1">
+    <div class="content">
+        <h1>Welcome to LawPasChris Shopping Blog</h1>
+        <p>
+            Stay Updated on the Latest Trends, Tips, and Deals
+            At [Your E-commerce Platform], we're more than just an online marketplace – we're 
+            a community passionate about style, innovation, and smart shopping. Dive into our blog
+            to discover the latest trends, get expert tips, and unlock exclusive deals.
+            Whether you're a fashionista, a tech enthusiast, or a savvy shopper, our blog 
+            has something for everyone. <span class="read-more">Continue reading...</span>
+            <span class="hidden-text">Read more about fashion...</span>
+        </p>
+    </div>
+</div>
 
-.product-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-}
+<div class="blog-container">
+    <img src="image2.jpg" alt="Blog Image 2">
+    <div class="content">
+        <h1>Exploring Tech Marvels</h1>
+        <p>
+            Discover the cutting-edge tech that's changing the game. From AI advancements to the latest in wearable tech, we've got the scoop.
+            Join us as we explore the fascinating world of technology and its impact on our daily lives. <span class="read-more">Continue reading...</span>
+            <span class="hidden-text">Learn more about tech innovations...</span>
+        </p>
+    </div>
+</div>
 
-.product-set {
-    display: flex;
-}
-
-.product-item {
-    margin-right: 10px;
-}
-
-.arrow {
-    font-size: 24px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
-}
-
-</style>
-<div id="shoes" class="category">
-    <h2>Shoes</h2>
-    <div class="carousel-container">
-        <div class="carousel-frame product-container" >
-            <!-- <button id="left-arrow" class="arrow left-arrow" onclick="moveCarousel('left')">❮</button> -->
-
-            <!-- <div class="product-container"> -->
-                <!-- Add more shoe product images as needed -->
-                <div class="product-set">
-                    <!-- First 5 shoe items -->
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-                    <!-- Repeat similar structure for the next 4 items -->
-                </div>
-
-                <div class="product-set">
-                    <!-- Next 5 shoe items -->
-                    <!-- First 5 shoe items -->
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-
-                    <div class="product-item">
-                        <div class="pro">
-                            <img src="./images/randomimage1.jpg" alt="">
-                            <div class="des">
-                                <span>adidas</span>
-                                <h5>Cartoon Astronaut T-shirts</h5>
-                                <h4>$80</h4>
-                            </div>
-                            <button>Go to Shop</button>
-                        </div>
-                    </div>
-                    <!-- Repeat similar structure for the next 4 items -->
-                    <!-- ... -->
-                </div>
-            <!-- </div> -->
-            <button id="left-arrow" class="arrow left-arrow" onclick="moveCarousel('left')">❮</button>
-            <button id="right-arrow" class="arrow right-arrow" onclick="moveCarousel('right')">❯</button>
-        </div>
+<div class="blog-container">
+    <img src="image3.jpg" alt="Blog Image 3">
+    <div class="content">
+        <h1>Unlocking Smart Shopping Tips</h1>
+        <p>
+            Ready to elevate your shopping game? Our blog is your go-to resource for smart shopping tips and tricks.
+            Learn how to find the best deals, make informed purchase decisions, and stay ahead of the latest trends. 
+            Join us on a journey to become a savvy shopper! <span class="read-more">Continue reading...</span>
+            <span class="hidden-text">Discover smart shopping strategies...</span>
+        </p>
     </div>
 </div>
 
 <script>
-let currentIndex = 0;
-
-function moveCarousel(direction) {
-    const productContainer = document.querySelector('.product-container');
-    const productSets = document.querySelectorAll('.product-set');
-    const totalSets = productSets.length;
-
-    if (direction === 'left' && currentIndex > 0) {
-        currentIndex--;
-    } else if (direction === 'right' && currentIndex < totalSets - 1) {
-        currentIndex++;
-    }
-
-    const translateValue = -currentIndex * 100;
-    productContainer.style.transform = `translateX(${translateValue}%)`;
-
-    // Toggle arrow visibility based on currentIndex
-    const leftArrow = document.getElementById('left-arrow');
-    const rightArrow = document.getElementById('right-arrow');
-
-    leftArrow.style.display = currentIndex > 0 ? 'block' : 'none';
-    rightArrow.style.display = currentIndex < totalSets - 1 ? 'block' : 'none';
-}
-
+    // JavaScript to toggle the visibility of the remaining text
+    document.addEventListener('click', function (event) {
+        const readMoreElements = document.querySelectorAll('.read-more');
+        readMoreElements.forEach(readMoreElement => {
+            if (event.target === readMoreElement) {
+                const hiddenText = readMoreElement.nextElementSibling;
+                hiddenText.style.display = 'inline'; // Show the hidden text
+                readMoreElement.style.display = 'none'; // Hide the "Continue reading..." text
+            }
+        });
+    });
 </script>
+
 </body>
 </html>

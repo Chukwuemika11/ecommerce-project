@@ -153,6 +153,7 @@ if (close){
 nav.classList.remove('active');
     })
 }
+
 // shop page 
             
 function goToShopPage() {
@@ -323,3 +324,18 @@ document.addEventListener('DOMContentLoaded', function () {
   //   scrollingContainer.addEventListener('mouseleave', () => {
   //     scrollingContainer.classList.add('scrolling');
   //   });
+
+
+  // blog page
+       // JavaScript to toggle the visibility of the remaining text
+       document.addEventListener('click', function (event) {
+        const readMoreElements = document.querySelectorAll('.read-more');
+        readMoreElements.forEach(readMoreElement => {
+            if (event.target === readMoreElement) {
+                const hiddenText = readMoreElement.nextElementSibling;
+                hiddenText.style.display = 'inline'; // Show the hidden text
+                readMoreElement.style.display = 'none'; // Hide the "Continue reading..." text
+            }
+        });
+    });
+
