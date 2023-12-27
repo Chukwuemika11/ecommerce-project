@@ -734,6 +734,11 @@ text-align: center;}
         width: 120px;
     }
 
+    .btn:hover {
+ background-color: #b3d4d2;
+ color: #1a1a1a;
+    }
+
     #blogPages ,button:hover {
         cursor: pointer; 
     transform: scale(1.0);
@@ -1188,7 +1193,6 @@ footer{
 .blogPagess {
     padding: 20px 10px;
 }
-
 
   }
 
