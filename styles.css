@@ -99,6 +99,11 @@ color: #088178;
 
 }
 
+.li-top{
+    list-style: none;
+    color: #4f4e4e;
+}
+
 
 .container {
     display: flex;
@@ -807,12 +812,223 @@ text-align: center;}
         color: white;
     }
 
-    
-
     .circleNav:hover{
       color: #088178;
       background-color: black;
     }
+
+    /* about us page */
+.aboutUsPages{
+    padding: 20px 30px;
+ }
+ 
+ .containerAbout {
+     margin: auto;
+ }
+
+ .containerAbout h1 {
+    color: #4f4e4e;
+    padding-bottom: 20px;
+ }
+
+ .containerAbout p{
+    color: #4f4e4e;
+    padding-bottom: 20px;
+ }
+
+ .containerAbout h2{
+    color: #088178;
+    
+ }
+ 
+ .team-member {
+     margin-bottom: 20px;
+     padding: 20px 90px;
+ }
+ 
+ .team-member img {
+     /* max-width: 100%; */
+     /* height: auto; */
+     width: 200px;
+     height: 200px;
+     border-radius: 100px;
+     margin-bottom: 10px;
+ }
+
+.members{
+    display: flex;
+    justify-content: space-between;
+} 
+
+/* Contact us page */
+
+/* form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+} */
+
+.contact-page{
+    padding: 20px 30px;
+}
+
+#page-header .contact-header{
+    background-image: url("img/shop11.jpg");
+    padding: 20px 30px;
+}
+
+#page-header h2 {
+  /* padding: 20px 30px;     */
+  color: #088178;
+  font-size: bold;
+}
+
+#page-header p {
+    /* padding: 20px 30px;     */
+    color: #088178;
+  font-size: bold;
+  }
+
+#contact-details{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px 30px;
+}
+
+#contact-details .details{
+   width: 40%;
+}
+
+#contact-details .details span,
+#form-details{
+   font-size: 12px;
+}
+
+#contact-details .details h2,
+#form-details form h2{
+   font-size: 26px;
+   line-height: 35px;
+   padding: 20px 0px;
+}
+
+#contact-details .details h3{
+   font-size: 16px;
+   padding-bottom: 15px;
+}
+
+#contact-details .details li{
+  list-style: none;
+  display: flex;
+  padding: 10px 0px;
+}
+
+#contact-details .details  li i{
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .details li  p{
+  margin: 0px;
+  font-size: 14px;
+}
+
+#contact-details .map{
+   width: 55%;
+   height: 400px;
+}
+
+
+#contact-details .map iframe{
+   width: 100%;
+   height: 100%;
+}
+
+#form-details {
+   display: flex;
+   justify-content: space-between;
+   margin: 30px;
+   padding: 80px;
+   border: 1px solid #e1e1e1;
+}
+
+#form-details form{
+   width: 65%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea{
+   width: 100%;
+   padding: 12px 15px;
+   outline: none;
+   margin-bottom: 20px;
+   border: 1px solid #e1e1e1;
+}
+
+#form-details form button{
+   background-color: #088178;
+   color: #fff;
+   height: 30px;
+}
+
+
+ #form-details .people div{
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+#form-details .people div img{
+   width: 65px;
+   height: 65px;
+   object-fit: cover;
+   margin-right: 15px;
+   border-radius: 70%;
+ }
+
+ #form-details .people div p{
+   margin: 0px;
+   font-size: 16px;
+   line-height: 25px;
+ }
+
+ #form-details .people div p span{
+    display: flex;
+    font-size: 16px;
+    font-weight: 600px;
+    color: #000;
+ }
+
+ #page-header {
+    background-image: url(img/shop11.jpg);
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px 30px;
+}
 
   @media only screen
   and (min-device-width: 768px)
@@ -1194,6 +1410,11 @@ footer{
     padding: 20px 10px;
 }
 
+.team-member {
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
   }
 
   @media (max-width: 477px){
@@ -1533,6 +1754,75 @@ justify-content: center;
 
 .blogPagess {
     padding: 20px 10px;
+}
+
+/* about us */
+.team-member{
+    padding: 0px;
+    /* display: flex; */
+}
+
+.status{
+    display: block;
+    /* padding-top: 40px; */
+    padding-left: 12px;
+}
+
+.members{
+    display: flex;
+    flex-direction: column; /* Stack team members vertically */
+    align-items: center; /* Center team members horizontally */
+    margin-top: 20px;
+}
+
+ /*Contact page */
+ #contact-details {
+    flex-direction: column;
+}
+#contact-details .details{
+ width: 100%;
+ margin-bottom: 30px;
+}
+
+#contact-details .map{
+ width: 100%;
+}
+
+#form-details {
+ margin: 10px;
+ padding: 30px 10px;
+ flex-wrap: wrap;
+}
+
+#form-details form{
+ width: 100%;
+ margin-bottom: 30px;
+}
+
+#form-details form button {
+    background-color: #088178;
+    color: #fff;
+    height: 30px;
+}
+
+#page-header {
+    background-image: url(img/shop11.jpg);
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+#form-details .people div {
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0px;
+    padding-top: 25px;
 }
     }
 

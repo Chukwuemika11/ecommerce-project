@@ -339,3 +339,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+
+  //   document.addEventListener('keydown', function (event) {
+  //     if (event.key === 'Enter') {
+  //         event.preventDefault();
+  //         document.getElementById('yourFormId').submit();
+  //     }
+  // });
+    
+
+  function isValidEmail(email) {
+    // Simple email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function submitForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    if (!isValidEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Assuming you have a server-side script to handle email sending
+    // You can use JavaScript fetch API to send data to the server
+    // Example:
+    fetch("/process_contact.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded", // Use this header for form data
+        },
+        body: new URLSearchParams({
+            name,
+            email,
+            subject,
+            message,
+        }),
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("Message sent successfully!");
+        } else {
+            alert("Error sending message. Please try again later.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error sending message. Please try again later.");
+    });
+}

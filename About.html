@@ -1,0 +1,184 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LawPasChris shopping mall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:ital,wght@0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="header">
+        <a href="./index.html"><img src="" class="logo" alt="">LawPasChris</a>
+    
+        <div>
+          <ul id="navbar">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Shop.html" onclick="goToShop()">Shop</a></li>
+              <li class="">
+                  <a href="categories.html">Categories &#x21d3;</a>
+              </li> 
+              <div class="sub-categories">
+                <div>
+                    <a href="./shoes.html">Shoes</a>
+                    <a href="./clothes.html">Clothes</a>
+                    <a href="./jewelries.html">jewelries</a>
+                </div>
+                <div>
+                    <a href="./food.html">food</a>
+                    <a href="./sportWears.html">sportWears</a>
+                    <a href="./culinaryDelights.html">culiniaryDelights</a>
+                    <a href="./comingSoon.html">comingSoon</a>
+                 
+                </div>
+                <div>
+                    <a href="./drinksAndWater.html">drinks and water</a>
+                    <a href="./others.html">others</a>
+                    <a href="/newArrivals.html">newArrivals</a>
+                </div>
+                    <!-- <div class="block"> -->
+                    <!-- </div> -->
+                </div>
+                </li>  
+<!-- <ul id="navba"> -->
+                <li class="hiddenLink"><a href="Blog.html">Blog</a></li>
+                <li class="hiddenLink"><a  class="active" href="About.html">AboutUs</a></li>
+                <li class="hiddenLink"><a href="Contact.html">Contact</a></li>
+                <li class="hiddenLink"><a href="Checkout.html">CheckOut</a></li>
+                <li class="hiddenLink"><a href="MyAccount.html">MyAccount</a></li>
+                <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
+                <a class="hiddenLink" class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
+                <p class="hiddenLink" class="movedarkmode">darkmode</p>
+            <!-- </ul> -->
+            
+                <div id="down">
+                  <div>
+               <li><a href="Blog.html">Blog</a></li>
+              <li class="active"><a href="About.html">AboutUs</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+               </div>
+               <div>
+              <li><a href="Checkout.html">CheckOut</a></li>
+              <li><a href="MyAccount.html">MyAccount</a></li>
+              <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
+              <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
+               </div>
+               <div>
+              <a href="#" id="close"><i class="far fa-times"></i></a>
+              <p class="movedarkmode">darkmode</p>
+               </div>
+          </div>
+            </ul>
+            
+         </div>
+         <div id="mobile">
+            <a href="Cart.html"><i class="far fa-shopping-bag "></i></a>
+           <i id="bar" class="fas fa-outdent"></i>
+         </div>
+
+    </section>
+
+    <section class="shoppingVideo">
+        <iframe autoplay loop class="shopvideo" width="100%" height="360" src="https://www.youtube.com/embed/hS32fWMjbDk" ></iframe>
+    <!-- https://youtu.be/hS32fWMjbDk -->
+</section>
+
+    <section class="aboutUsPages">
+        <div class="containerAbout">        
+            <h1>Welcome to LawPasChris shopping platform, where your shopping experience meets excellence. Our journey began with a simple yet powerful idea: to create an online marketplace that not only offers a wide range of high-quality products but also prioritizes customer satisfaction.</h1>
+        
+            <p>At LawPasChris, we are more than just an online store; we are a team of passionate individuals committed to providing you with the best shopping experience possible.</p>
+        
+            <h2>Our Mission</h2>
+            <p>Our mission is to empower your lifestyle by offering a curated selection of products that combine quality, style, and affordability. We strive to exceed your expectations at every step, from browsing our website to receiving your order at your doorstep.</p>
+        
+            <h2>Meet Our Team</h2>
+            <div class="members">
+            <div class="team-member">
+                <img src="./images/comingsoon11.jpg" alt="Founder - John Doe">
+               <div class="status">
+                <h3>Obi Christopther </h3>
+                <p>Founder & CEO</p>
+               </div> 
+            </div>
+        
+            <div class="team-member">
+                <img src="img/lawrence.jpg" alt="Marketing Director - Jane Smith">
+               <div class="status">
+                <h3>Izundu Chukwuemika</h3>
+                <p>Founder & CEO</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/culiniary2.jpg" alt="Marketing Director - Jane Smith">
+               <div class="status">
+                <h3>Damian Paschal</h3>
+                <p>Founder & CEO</p>
+                </div>
+            </div>
+        </div>
+
+                    
+            <p>Together, we bring a diverse set of skills and expertise to ensure that Your LawPasChris remains a trusted destination for all your shopping needs.</p>
+        
+            <h2>Our Commitment</h2>
+            <p>We are committed to delivering not just products but experiences. Your satisfaction is our priority, and we are constantly working to enhance our services, improve our product offerings, and provide you with a seamless shopping journey.</p>
+        
+            <h2>Why Choose LawPasChris?</h2>
+            <ul class="li-top">
+                <li>Wide Range of Products</li>
+                <li>Secure and Convenient Shopping</li>
+                <li>Fast and Reliable Delivery</li>
+                <li>Exceptional Customer Service</li>
+                <li>Exclusive Deals and Discounts</li>
+            </ul>
+        
+    </section>
+
+                 <!-- footer -->
+                 <footer>
+                    <div class="footer-section contact-info">
+                        <h3>Contact Us</h3>
+                        <p>123 School Street, Cityville</p>
+                        <p>Phone: (123) 456-7890</p>
+                        <p>Email: info@myschoolstore.com</p>
+                    </div>
+                
+                    <div class="footer-section quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/shop">Shop</a></li>
+                            <li><a href="/categories">Categories</a></li>
+                            <li><a href="/cart">Cart</a></li>
+                            <li><a href="/checkout">Checkout</a></li>
+                            <li><a href="/account">My Account</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                            <li><a href="MyAccount.html">MyAccount</a></li>
+                        </ul>
+                    </div>
+                
+                    <div class="footer-section social-media">
+                        <h3>Follow Us</h3>
+                        <!-- Add social media icons or links here -->
+                    </div>
+                
+                    <div class="footer-section legal">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/terms-of-service">Terms of Service</a></li>
+                        </ul>
+                    </div>
+    
+                <div id="scrollToTopContainer" onclick="scrollToTop()">
+                    <span id="scrollToTopBtn">&#9650;</span>
+                  </div>
+            </footer>
+        
+        <script src="./script.js"></script>
+    </body>
+    </html>
