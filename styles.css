@@ -883,7 +883,7 @@ input[type="submit"] {
 } */
 
 .contact-page{
-    padding: 20px 30px;
+    padding: 0px 30px;
 }
 
 #page-header .contact-header{
@@ -1452,6 +1452,11 @@ footer{
     padding: 0px;
 }
 
+.contact-page {
+    padding: 0px 30px;
+}
+
+
   }
 
   @media (max-width: 477px){
@@ -1861,6 +1866,11 @@ justify-content: center;
     padding-left: 0px;
     padding-top: 25px;
 }
+
+.contact-page {
+    padding: 0px 30px;
+}
+
 
 /* darkmode */
 

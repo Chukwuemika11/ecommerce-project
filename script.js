@@ -421,6 +421,34 @@ desElements.forEach((des) => {
   des.style.color = isDarkMode ? "#ccc" : "#000";
 });
 
+// #contact-details
+
+const contactDetailsElements = document.querySelectorAll('[id="contact-details"]');
+
+contactDetailsElements.forEach((element) => {
+  element.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+const formDetails =  document.querySelectorAll('[id="form-details"]');
+
+formDetails.forEach((element) => {
+  element.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+
+const spanFormDetails = document.querySelectorAll(".spanFormDetails");
+
+spanFormDetails.forEach((spanFormDetails) => {
+  spanFormDetails.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+
+const contactph2Color = document.querySelectorAll(".colorDark");
+
+contactph2Color.forEach((colorDark) => {
+  colorDark.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
 const blogMainText = document.querySelectorAll(".blogMainText");
 
 blogMainText.forEach((blogMainText) => {
@@ -444,6 +472,8 @@ const darkmodeColor = document.querySelectorAll(".darkmodeColor");
 darkmodeColor.forEach((darkmodeColor) => {
   darkmodeColor.style.color = isDarkMode ? "#088178" : "#000";
 });
+
+
 // const footerElements = document.querySelectorAll("footer");
 
 // footerElements.forEach((footer) => {
