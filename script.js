@@ -392,3 +392,62 @@ function submitForm() {
         alert("Error sending message. Please try again later.");
     });
 }
+
+
+// darkmode
+
+const toggle = document.querySelector('.toggle');
+const changeToggleColor = document.querySelector('.changeToggleColor');
+const round = document.querySelector('.round');
+let isDarkMode = false;
+
+toggle.addEventListener('click', function () {
+  isDarkMode = !isDarkMode;
+
+  if (isDarkMode === true) {
+    document.body.style.backgroundColor = 'hsl(230, 17%, 14%)';
+    round.style.left = '27.5px'; // Adjust as needed for the new position
+  } else {
+    document.body.style.backgroundColor = '#ffffff';
+    round.style.left = '2.5px'; // Return to the original position
+  }
+
+  changeToggleColor.style.backgroundColor = isDarkMode? '#088178' : '#000';
+
+  //  for des
+  const desElements = document.querySelectorAll(".des");
+
+desElements.forEach((des) => {
+  des.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+const blogMainText = document.querySelectorAll(".blogMainText");
+
+blogMainText.forEach((blogMainText) => {
+  blogMainText.style.color = isDarkMode ? "#fff" : "#000";
+});
+
+const content = document.querySelectorAll(".content");
+
+content.forEach((content) => {
+  content.style.color = isDarkMode ? "#fff" : "#000";
+});
+
+const shoeText = document.querySelectorAll(".shoeText");
+
+shoeText.forEach((shoeText) => {
+  shoeText.style.color = isDarkMode ? "#fff" : "#000";
+});
+
+const darkmodeColor = document.querySelectorAll(".darkmodeColor");
+
+darkmodeColor.forEach((darkmodeColor) => {
+  darkmodeColor.style.color = isDarkMode ? "#088178" : "#000";
+});
+// const footerElements = document.querySelectorAll("footer");
+
+// footerElements.forEach((footer) => {
+//   footer.style.backgroundColor = isDarkMode ? "#333" : "#fff";
+// });
+
+});
