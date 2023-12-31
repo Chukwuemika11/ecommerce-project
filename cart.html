@@ -77,16 +77,16 @@
             
          </div>
          <div id="mobile">
-            <a class="active" href="Cart.html"><i class="far fa-shopping-bag "></i></a>
+            <a class="shiftDown active" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
            <i id="bar" class="fas fa-outdent"></i>
          </div>
 
     </section>
-    <div id="cartPage" style="display: none;">
+    <div id="cartPage">
         <h1>Cart Page</h1>
         <div id="cartItems"></div>
         <p>Total Price: $<span id="totalPrice">0.00</span></p>
-        <button onclick="goToPage('shop')">Go to Shopping</button>
+        <button onclick="goToPage()">Go to Shopping</button>
         <button onclick="checkout()">Checkout</button>
       </div>
 
@@ -100,6 +100,62 @@
     </div> -->
   
     <script src="/script.js"></script>
+
+    <script>
+      // Handle messages from other pages (e.g., the shop page)
+      // window.addEventListener('message', function (event) {
+      //     if (event.data.type === 'updateCartDisplay') {
+      //         cartItems = event.data.cartItems;
+      //         displayCartItems();
+      //     }
+      // });
+
+      // function goToPage(){
+      //   window.location.href="/shop.html";
+      // }
+
+      // function displayCartItems() {
+      //     const cartItemsDiv = document.getElementById('cartItems');
+      //     const totalPriceSpan = document.getElementById('totalPrice');
+      //     let totalPrice = 0;
+
+      //     if (cartItems.length > 0) {
+      //         cartItemsDiv.innerHTML = ''; // Clear existing content
+
+      //         cartItems.forEach((item, index) => {
+      //             const cartItem = document.createElement('div');
+      //             cartItem.className = 'cartItem';
+      //             cartItem.innerHTML = `
+      //                 <img src="${item.image}" alt="${item.text}">
+      //                 <p>${item.text}</p>
+      //                 <p>Quantity: ${item.quantity}</p>
+      //                 <p>$${(item.price * item.quantity).toFixed(2)}</p>
+      //                 <button onclick="removeFromCart(${index})">Remove</button>
+      //             `;
+
+      //             cartItemsDiv.appendChild(cartItem);
+      //             totalPrice += item.price * item.quantity;
+      //         });
+      //     } else {
+      //         cartItemsDiv.innerHTML = 'No items in the cart.';
+      //     }
+
+      //     totalPriceSpan.innerText = totalPrice.toFixed(2);
+      // }
+
+      // function removeFromCart(index) {
+      //     cartItems.splice(index, 1);
+      //     updateCartCount();
+      //     displayCartItems();
+      // }
+
+      // function updateCartCount() {
+      //     // Notify the shop page that the cart count has been updated
+      //     window.opener.postMessage({ type: 'updateCartCount', count: calculateTotalQuantity() }, '*');
+      // }
+  </script>
+
+
 </body>
 </html>
 

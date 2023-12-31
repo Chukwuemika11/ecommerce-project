@@ -276,8 +276,6 @@ window.location.href = './shop.html#coming-soon-page';
     totalPriceSpan.innerText = totalPrice.toFixed(2);
   }
 
-
-
   function removeFromCart(index) {
     cartItems.splice(index, 1);
     updateCartCount();
