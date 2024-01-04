@@ -14,60 +14,36 @@
         <a href="./index.html"><img src="" class="logo" alt="">LawPasChris</a>
     
         <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="Shop.html" onclick="goToShop()">Shop</a></li>
-                <li class="">
-                    <a href="categories.html">Categories &#x21d3;</a>
-                </li> 
-                <div class="sub-categories">
-                    <div>
-                        <a href="./shoes.html">Shoes</a>
-                        <a href="./clothes.html">Clothes</a>
-                        <a href="./jewelries.html">jewelries</a>
-                    </div>
-                    <div>
-                        <a href="./food.html">food</a>
-                        <a href="./sportWears.html">sportWears</a>
-                        <a href="./culinaryDelights.html">culiniaryDelights</a>
-                        <a href="./comingSoon.html">comingSoon</a>
-                     
-                    </div>
-                    <div>
-                        <a href="./drinksAndWater.html">drinks and water</a>
-                        <a href="./others.html">others</a>
-                        <a href="/newArrivals.html">newArrivals</a>
-                    </div>
-                        <!-- <div class="block"> -->
-                        <!-- </div> -->
-                    </div>
+          <ul id="navbar">
+              <li><a href="index.html">Home</a></li>
+              <li><a class="active" href="Shop.html" onclick="goToShop()">Shop</a></li>
+              <li class="">
+                  <a href="categories.html">Categories &#x21d3;</a>
+              </li> 
+              <div class="sub-categories">
+                <div>
+                    <a href="./shoes.html">Shoes</a>
+                    <a href="./clothes.html">Clothes</a>
+                    <a href="./jewelries.html">jewelries</a>
+                </div>
+                <div>
+                    <a href="./food.html">food</a>
+                    <a href="./sportWears.html">sportWears</a>
+                    <a href="./culinaryDelights.html">culiniaryDelights</a>
+                    <a href="./comingSoon.html">comingSoon</a>
+                 
+                </div>
+                <div>
+                    <a href="./drinksAndWater.html">drinks and water</a>
+                    <a href="./others.html">others</a>
+                    <a href="/newArrivals.html">newArrivals</a>
+                </div>
+                    <!-- <div class="block"> -->
+                    <!-- </div> -->
+                </div>
                 </li>  
 
-                
-                <div id="down">
-                    <div>
-                 <li><a href="Blog.html">Blog</a></li>
-                <li><a href="About.html">AboutUs</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                 </div>
-                 <div>
-                <li><a href="Checkout.html">CheckOut</a></li>
-                <li><a href="MyAccount.html">MyAccount</a></li>
-                <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
-                <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
-                 </div>
-                 <div>
-                <a href="#" id="close"><i class="far fa-times"></i></a>
-                <div class="flex-slider">
-                    <p class="dark-mode movedarkmode">Darkmode</p>
-                    <div class="toggle changeToggleColor">
-                      <span class="round"></span>
-                  </div>
-                 </div>                
-                     </div>
-            </div>
-
-            <li class="hiddenLink"><a href="Blog.html">Blog</a></li>
+                <li class="hiddenLink"><a href="Blog.html">Blog</a></li>
                 <li class="hiddenLink"><a href="About.html">AboutUs</a></li>
                 <li class="hiddenLink"><a href="Contact.html">Contact</a></li>
                 <li class="hiddenLink"><a href="Checkout.html">CheckOut</a></li>
@@ -76,12 +52,32 @@
                 <a class="hiddenLink" class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
                 <p class="hiddenLink" class="movedarkmode">darkmode</p>
                 
-
+                <div id="down">
+                  <div>
+               <li><a href="Blog.html">Blog</a></li>
+              <li><a href="About.html">AboutUs</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+               </div>
+               <div>
+              <li><a href="Checkout.html">CheckOut</a></li>
+              <li><a href="MyAccount.html">MyAccount</a></li>
+              <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
+              <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
+               </div>
+               <div>
+              <a href="#" id="close"><i class="far fa-times"></i></a>
+              <div class="flex-slider">
+                <p class="dark-mode movedarkmode">Darkmode</p>
+                <div class="toggle changeToggleColor">
+                  <span class="round"></span>
+              </div>
+             </div>                   </div>
+          </div>
             </ul>
             
          </div>
          <div id="mobile">
-            <a href="Cart.html"><i class="far fa-shopping-bag "></i></a>
+            <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCount">0</span></a>
            <i id="bar" class="fas fa-outdent"></i>
          </div>
 
@@ -155,8 +151,7 @@
                 
                 <div class="product-container">
                 <!-- Add more shoe product images as needed -->
-              <div id="content">
-                <div id="shopPage">
+                <div id="shopPage product1">
                 <div class="pro">
                     <img src="./images/shoe1.jpg" alt="">
                     <div class="des">
@@ -167,7 +162,7 @@
                     <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe1.jpg')">Add To Cart</button>
                 </div>
             </div>
-            </div>
+            
 
             <div id="product1">
                 <div class="pro">
@@ -177,7 +172,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe1.jpg')">Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe2.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -189,7 +184,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe9.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -201,7 +196,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe13.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -213,7 +208,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe11.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -226,7 +221,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe6.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -238,7 +233,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe8.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -250,7 +245,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe3.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -262,7 +257,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe10.jpg')">Add To Cart</button>
                 </div>
             </div>
 
@@ -274,7 +269,7 @@
                         <h5>Cartoon Astronaut T-shirts</h5>
                        <h4>$80</h4>
                     </div>
-                    <button>Add To Cart</button>
+                    <button onclick="addToCart('Cartoon Astronaut T-shirts', 80, './images/shoe5.jpg')">Add To Cart</button>
                 </div>
             </div>
 

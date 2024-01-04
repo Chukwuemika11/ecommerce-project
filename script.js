@@ -219,67 +219,75 @@ window.location.href = './shop.html#coming-soon-page';
 
 // cart page 
 
-  let cartItems = [];
+function goToshopPage(){
+  window.location.href="./shop.html"
+}
 
-  function addToCart(itemText, itemPrice, itemImage) {
-    const existingItem = cartItems.find(item => item.text === itemText);
+ let cartItems = [];
 
-    if (existingItem) {
-      existingItem.quantity++;
-    } else {
-      const newItem = {
-        text: itemText,
-        price: itemPrice,
-        image: itemImage,
-        quantity: 1
-      };
-      cartItems.push(newItem);
-    }
+ function addToCart(itemText, itemPrice, itemImage) {
+  const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
 
-    updateCartCount();
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    const newItem = {
+      text: itemText,
+      price: itemPrice,
+      image: itemImage,
+      quantity:1
+    };
+    cartItems.push(newItem);
   }
 
-  function updateCartCount() {
-    document.getElementById('cartCount').innerText = calculateTotalQuantity();
+  updateCartCount();
+  saveCartToLocalStorage();
+}
+
+
+function updateCartCount() {
+  document.getElementById('cartCount').innerText = calculateTotalQuantity();
+}
+
+function calculateTotalQuantity() {
+  return cartItems.reduce((total, item) => total + item.quantity, 0);
+}
+
+function displayCartItems() {
+  const cartItemsDiv = document.getElementById('cartItems');
+  const totalPriceSpan = document.getElementById('totalPrice');
+  let totalPrice = 0;
+
+  if (cartItems.length > 0) {
+    cartItemsDiv.innerHTML = ''; // Clear existing content
+
+    cartItems.forEach((item, index) => {
+      const cartItem = document.createElement('div');
+      cartItem.className = 'cartItem';
+      cartItem.innerHTML = `
+        <img src="${item.image}" alt="${item.text}">
+        <p>${item.text}</p>
+        <p>Quantity: ${item.quantity}</p>
+        <p>$${(item.price * item.quantity).toFixed(2)}</p>
+        <i class="fa fa-trash delete-icon" onclick="removeFromCart(${index})"></i>
+      `;
+
+      cartItemsDiv.appendChild(cartItem);
+      totalPrice += item.price * item.quantity;
+    });
+  } else {
+    cartItemsDiv.innerHTML = 'No items in the cart.';
   }
 
-  function calculateTotalQuantity() {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  }
+  totalPriceSpan.innerText = totalPrice.toFixed(2);
+}
 
-  function displayCartItems() {
-    const cartItemsDiv = document.getElementById('cartItems');
-    const totalPriceSpan = document.getElementById('totalPrice');
-    let totalPrice = 0;
 
-    if (cartItems.length > 0) {
-      cartItemsDiv.innerHTML = ''; // Clear existing content
-
-      cartItems.forEach((item, index) => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cartItem';
-        cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.text}">
-          <p>${item.text}</p>
-          <p>Quantity: ${item.quantity}</p>
-          <p>$${(item.price * item.quantity).toFixed(2)}</p>
-          <button onclick="removeFromCart(${index})">Remove</button>
-        `;
-
-        cartItemsDiv.appendChild(cartItem);
-        totalPrice += item.price * item.quantity;
-      });
-    } else {
-      cartItemsDiv.innerHTML = 'No items in the cart.';
-    }
-
-    totalPriceSpan.innerText = totalPrice.toFixed(2);
-  }
-
-  function removeFromCart(index) {
-    cartItems.splice(index, 1);
-    updateCartCount();
+function removeFromCart(index) {
+  cartItems.splice(index, 1);
+  updateCartCount();
   displayCartItems();
+  saveCartToLocalStorage();
 }
 
 function goToPage(page) {
@@ -289,26 +297,40 @@ function goToPage(page) {
 
   if (page === 'cart') {
     // Call displayCartItems when switching to the cart page
+    loadCartFromLocalStorage();
     displayCartItems();
   }
-
-  // Add similar logic for other pages
 }
-
-  
 
 function checkout() {
   // Implement your checkout logic here
   alert('Checkout functionality will be implemented.');
 }
 
-
-// Call displayCartItems when the cart page loads
+// Load cart items from local storage on page load
 document.addEventListener('DOMContentLoaded', function () {
+  loadCartFromLocalStorage();
+  updateCartCount();  // Ensure the cart count is updated
   if (window.location.href.includes('cart.html')) {
     displayCartItems();
   }
 });
+
+
+// Save cart items to local storage
+function saveCartToLocalStorage() {
+  localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+// Load cart items from local storage
+function loadCartFromLocalStorage() {
+  if (cartItems.length === 0) {
+    const storedCart = localStorage.getItem('cartItems');
+    cartItems = storedCart ? JSON.parse(storedCart) : [];
+  }
+}
+
+
 
 
 // categories page
@@ -337,14 +359,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
   //   document.addEventListener('keydown', function (event) {
   //     if (event.key === 'Enter') {
   //         event.preventDefault();
   //         document.getElementById('yourFormId').submit();
   //     }
   // });
-    
 
   function isValidEmail(email) {
     // Simple email validation regex
@@ -419,6 +439,12 @@ desElements.forEach((des) => {
   des.style.color = isDarkMode ? "#ccc" : "#000";
 });
 
+const cartItems = document.querySelectorAll("#cartItems");
+
+cartItems.forEach((cartItems) => {
+  cartItems.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
 // #contact-details
 
 const contactDetailsElements = document.querySelectorAll('[id="contact-details"]');
@@ -471,6 +497,20 @@ darkmodeColor.forEach((darkmodeColor) => {
   darkmodeColor.style.color = isDarkMode ? "#088178" : "#000";
 });
 
+
+
+const order = document.querySelectorAll(".orderH1");
+
+order.forEach((orderH1) => {
+  orderH1.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+
+const Price = document.querySelectorAll(".totalPrice");
+
+Price.forEach((totalPrice) => {
+  totalPrice.style.color = isDarkMode ? "#ccc" : "#000";
+});
 
 // const footerElements = document.querySelectorAll("footer");
 
