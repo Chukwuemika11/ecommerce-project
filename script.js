@@ -226,7 +226,8 @@ function goToshopPage(){
  let cartItems = [];
 
  function addToCart(itemText, itemPrice, itemImage) {
-  const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
+  
+ const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
 
   if (existingItem) {
     existingItem.quantity++;
@@ -246,8 +247,10 @@ function goToshopPage(){
 
 
 function updateCartCount() {
+  console.log('Updating cart count');
   document.getElementById('cartCount').innerText = calculateTotalQuantity();
 }
+
 
 function calculateTotalQuantity() {
   return cartItems.reduce((total, item) => total + item.quantity, 0);
