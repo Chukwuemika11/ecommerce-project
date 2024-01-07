@@ -484,6 +484,25 @@ footer {
     padding: 0px 10px;
   }
 
+  .delete-icon{
+    padding-left: 20px;
+    cursor: pointer;
+  }
+
+  .delete-icon:hover{
+    padding-left: 20px;
+    cursor: pointer;
+    color: red;
+  }
+
+  .quantity{
+    padding-left: 30px;
+  }
+
+  .price{
+    padding-left: 20px;
+  }
+
   #cartPage{
     padding: 20px 10px;
   }
@@ -1088,6 +1107,22 @@ input[type="submit"] {
             margin-left: 15px;
         }
 
+        /* cart */
+
+        #cartCountDesktop{
+            /* background-color: #088178; */
+            color: red;
+            /* width: 300px; */
+          }
+
+          .orderH1{
+            padding-left: 15px;
+          }
+
+          .totalPrice{
+            padding-left: 15px;
+          }
+
   @media only screen
   and (min-device-width: 768px)
   and (max-device-width: 1024px) {
@@ -1497,6 +1532,13 @@ footer {
 .cartLink{
     padding-left: 30px;
    }
+
+   #cartCountMobile{
+    /* background-color: #088178; */
+    color: red;
+    /* width: 300px; */
+  }
+  
   }
 
   @media (max-width: 477px){
@@ -1935,6 +1977,30 @@ justify-content: center;
     margin-bottom: 10px;
     /* padding: 0px 10px; */
   }
+
+  #cartCountMobile{
+    /* background-color: #088178; */
+    color: red;
+    /* width: 300px; */
+  }
+
+  .delete-icon{
+    padding-left: 5px;
+    cursor: pointer;
+  }
+  .delete-icon:hover{
+    color: red;
+  }
+
+  .quantity{
+    padding-left: 5px;
+  }
+
+  .price{
+    padding-left: 5px;
+  }
+
+  
     }
 
     

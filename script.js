@@ -245,10 +245,12 @@ function goToshopPage(){
   saveCartToLocalStorage();
 }
 
-
 function updateCartCount() {
-  console.log('Updating cart count');
-  document.getElementById('cartCount').innerText = calculateTotalQuantity();
+  // For desktop
+  document.getElementById('cartCountDesktop').innerText = calculateTotalQuantity();
+
+  // For mobile
+  document.getElementById('cartCountMobile').innerText = calculateTotalQuantity();
 }
 
 
@@ -270,8 +272,8 @@ function displayCartItems() {
       cartItem.innerHTML = `
         <img src="${item.image}" alt="${item.text}">
         <p>${item.text}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>$${(item.price * item.quantity).toFixed(2)}</p>
+        <p class="quantity">Quantity: ${item.quantity}</p>
+        <p class="price">$${(item.price * item.quantity).toFixed(2)}</p>
         <i class="fa fa-trash delete-icon" onclick="removeFromCart(${index})"></i>
       `;
 
