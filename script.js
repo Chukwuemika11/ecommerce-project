@@ -281,7 +281,7 @@ function displayCartItems() {
       totalPrice += item.price * item.quantity;
     });
   } else {
-    cartItemsDiv.innerHTML = 'No items in the cart.';
+    cartItemsDiv.innerHTML = 'No items in your cart 😢.';
   }
 
   totalPriceSpan.innerText = totalPrice.toFixed(2);
