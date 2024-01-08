@@ -1,5 +1,4 @@
 <?php
-
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -42,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If the request is not a POST request, send a method not allowed response
     http_response_code(405);
     echo json_encode(array("message" => "Method Not Allowed"));
+
 }
+error_log("Form submitted!");
 
 ?>

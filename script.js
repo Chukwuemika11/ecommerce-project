@@ -372,7 +372,6 @@ function loadCartFromLocalStorage() {
   // });
 
   function isValidEmail(email) {
-    // Simple email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
@@ -388,13 +387,10 @@ function submitForm() {
         return;
     }
 
-    // Assuming you have a server-side script to handle email sending
-    // You can use JavaScript fetch API to send data to the server
-    // Example:
-    fetch("/process_contact.php", {
+    fetch("process_contact.php", {
         method: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded", // Use this header for form data
+            "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
             name,
@@ -415,7 +411,6 @@ function submitForm() {
         alert("Error sending message. Please try again later.");
     });
 }
-
 
 // darkmode
 
