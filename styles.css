@@ -41,6 +41,7 @@
 
 
 
+
 #navbar{
    display: flex;
    align-items: center;
@@ -50,6 +51,14 @@
    flex-direction: row;
 }
 
+.logoName {
+   font-size: 30px;
+   color: #088178;
+}
+
+.logoName:hover{
+    color: #20938c;
+}
 
 .movedarkmode{
     padding-left: none;
