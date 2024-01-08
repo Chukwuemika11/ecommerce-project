@@ -273,7 +273,7 @@ function displayCartItems() {
         <img src="${item.image}" alt="${item.text}">
         <p>${item.text}</p>
         <p class="quantity">Quantity: ${item.quantity}</p>
-        <p class="price">$${(item.price * item.quantity).toFixed(2)}</p>
+        <p class="price">₦${(item.price * item.quantity).toFixed(2)}</p>
         <i class="fa fa-trash delete-icon" onclick="removeFromCart(${index})"></i>
       `;
 
