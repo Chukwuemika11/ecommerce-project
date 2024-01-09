@@ -272,7 +272,11 @@ function displayCartItems() {
       cartItem.innerHTML = `
         <img src="${item.image}" alt="${item.text}">
         <p>${item.text}</p>
-        <p class="quantity">Quantity: ${item.quantity}</p>
+        <div class="quantity-controls">
+          <button class="quantity-btn" onclick="updateQuantityInCart('${item.text}', 'minus', ${index})">-</button>
+          <input type="number" class="quantity-input" value="${item.quantity}" min="0" step="1" onchange="updateQuantityInCart('${item.text}', 'input', ${index}, this)">
+          <button class="quantity-btn" onclick="updateQuantityInCart('${item.text}', 'plus', ${index})">+</button>
+        </div>
         <p class="price">₦${(item.price * item.quantity).toFixed(2)}</p>
         <i class="fa fa-trash delete-icon" onclick="removeFromCart(${index})"></i>
       `;
@@ -286,6 +290,29 @@ function displayCartItems() {
 
   totalPriceSpan.innerText = totalPrice.toFixed(2);
 }
+
+function updateQuantityInCart(itemText, action, index, inputElement) {
+  const quantityInput = inputElement || document.querySelector(`.cartItem:nth-child(${index + 1}) .quantity-input`);
+  let newQuantity = parseInt(quantityInput.value, 10);
+
+  if (isNaN(newQuantity) || newQuantity < 0) {
+    newQuantity = 0;
+  }
+
+  if (action === 'plus') {
+    newQuantity++;
+  } else if (action === 'minus' && newQuantity > 0) {
+    newQuantity--;
+  }
+
+  quantityInput.value = newQuantity;
+  cartItems[index].quantity = newQuantity;
+
+  updateCartCount();
+  saveCartToLocalStorage();
+  displayCartItems();
+}
+
 
 
 function removeFromCart(index) {
@@ -334,8 +361,6 @@ function loadCartFromLocalStorage() {
     cartItems = storedCart ? JSON.parse(storedCart) : [];
   }
 }
-
-
 
 
 // categories page
