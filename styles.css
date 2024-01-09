@@ -497,20 +497,19 @@ footer {
     padding: 0px 10px;
   }
 
+  .cartItem .quantity-controls {
+    display: flex;
+    align-items: center;
+    width: 80px; /* Adjust the width as needed */
+  }
+  
   .cartItem .quantity-controls .quantity-btn {
-     /* Adjust the width as needed */
-    background-color: #088178;
-    width: 40px;
-}
-
-.quantity-controls{
-    padding-left: 10px;
-}
-
-  .cartItem .quantity-input {
-    width: 40px;
-    text-align: center;
-}
+    width: 20px; /* Adjust the width as needed */
+  }
+  
+  .cartItem .quantity-controls .quantity-input {
+    width: 30px; /* Adjust the width as needed */
+  }
   .delete-icon{
     padding-left: 20px;
     cursor: pointer;
@@ -1838,7 +1837,7 @@ footer{
     /* padding: 4px; */
     display: block;
     text-decoration: none;
-    margin-left: -3px;
+    margin-left: -6px;
     padding-top: 15px;
 }
 
@@ -2020,7 +2019,7 @@ justify-content: center;
   }
 
   .quantity{
-    padding-left: 5px;
+    /* padding-left: 5px; */
   }
 
   .price{

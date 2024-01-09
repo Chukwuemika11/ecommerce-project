@@ -291,29 +291,31 @@ function displayCartItems() {
   totalPriceSpan.innerText = totalPrice.toFixed(2);
 }
 
-function updateQuantityInCart(itemText, action, index, inputElement) {
+function updateQuantityInCart(itemId, action, index, inputElement) {
   const quantityInput = inputElement || document.querySelector(`.cartItem:nth-child(${index + 1}) .quantity-input`);
   let newQuantity = parseInt(quantityInput.value, 10);
 
-  if (isNaN(newQuantity) || newQuantity < 0) {
-    newQuantity = 0;
+  if (isNaN(newQuantity) || newQuantity < 1) {
+    newQuantity = 1;
   }
 
-  if (action === 'plus') {
-    newQuantity++;
-  } else if (action === 'minus' && newQuantity > 0) {
-    newQuantity--;
+  if (newQuantity === 1 && action === 'minus') {
+    // Do nothing when trying to decrease from 1 to avoid negative values
+  } else {
+    if (action === 'plus') {
+      newQuantity++;
+    } else if (action === 'minus' && newQuantity > 1) {
+      newQuantity--;
+    }
+
+    quantityInput.value = newQuantity;
+    cartItems[index].quantity = newQuantity;
+
+    updateCartCount();
+    saveCartToLocalStorage();
+    displayCartItems();
   }
-
-  quantityInput.value = newQuantity;
-  cartItems[index].quantity = newQuantity;
-
-  updateCartCount();
-  saveCartToLocalStorage();
-  displayCartItems();
 }
-
-
 
 function removeFromCart(index) {
   cartItems.splice(index, 1);
