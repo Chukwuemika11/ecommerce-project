@@ -324,6 +324,20 @@ function removeFromCart(index) {
   saveCartToLocalStorage();
 }
 
+// Add this function to handle the "Delete All Items" button click
+function deleteAllItems() {
+  // Clear the cartItems array
+  cartItems = [];
+
+  // Update the cart count and display
+  updateCartCount();
+  displayCartItems();
+
+  // Save the empty cart to local storage
+  saveCartToLocalStorage();
+}
+
+
 function goToPage(page) {
   // Switch to the specified page
   document.getElementById('shopPage').style.display = page === 'shop' ? 'block' : 'none';
@@ -478,6 +492,12 @@ const contactDetailsElements = document.querySelectorAll('[id="contact-details"]
 
 contactDetailsElements.forEach((element) => {
   element.style.color = isDarkMode ? "#ccc" : "#000";
+});
+
+const textContentElements = document.querySelectorAll('.text-content p');
+
+textContentElements.forEach((element) => {
+  element.style.color = isDarkMode ? '#ccc' : '#000';
 });
 
 const formDetails =  document.querySelectorAll('[id="form-details"]');

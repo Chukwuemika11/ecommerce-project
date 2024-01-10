@@ -19,25 +19,26 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="shop.html" onclick="goToShop()">Shop</a></li>
               <li class="">
-                  <a href="categories.html">Categories &#x21d3;</a>
+                  <a href="categories.html">Categories</a>
+                  <!-- for the arrow &#x21d3; incase -->
               </li> 
               <div class="sub-categories">
                 <div>
                     <a href="./shoes.html">Shoes</a>
                     <a href="./clothes.html">Clothes</a>
-                    <a href="./jewelries.html">jewelries</a>
+                    <a href="./jewelries.html">jewelries</a> 
                 </div>
                 <div>
                     <a href="./food.html">food</a>
                     <a href="./sportWears.html">sportWears</a>
-                    <a href="./culinaryDelights.html">culiniaryDelights</a>
+                    <a class="culinaryd" href="./culinaryDelights.html">culiniaryDelights</a>
                     <a href="./comingSoon.html">comingSoon</a>
                  
                 </div>
                 <div>
-                    <a href="./drinksAndWater.html">drinks and water</a>
+                    <a class="drinkwa" href="./drinksAndWater.html">drinks and water</a>
                     <a href="./others.html">others</a>
-                    <a href="/newArrivals.html">newArrivals</a>
+                    <a class="newArr" href="/newArrivals.html">newArrivals</a>
                 </div>
                     <!-- <div class="block"> -->
                     <!-- </div> -->
@@ -49,17 +50,21 @@
                 <li class="hiddenLink"><a href="Contact.html">Contact</a></li>
                 <li class="hiddenLink"><a href="Checkout.html">CheckOut</a></li>
                 <li class="hiddenLink"><a href="MyAccount.html">MyAccount</a></li>
+                <div class="flex-slider">
                 <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
-                <a class="cartLink shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCountDesktop">0</span></a>
-                <p class="hiddenLink" class="movedarkmode">darkmode</p>
-                
+                <a class="cartLink shiftDown active" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCountDesktop">0</span></a>
+                    <p class="dark-mode movedarkmode">Darkmode</p>
+                    <div class="toggle changeToggleColor">
+                      <span class="round"></span>
+                  </div>
+                 </div>                
                 <div id="down">
-                  <div>
+                  <div class="firstSide">
                <li><a href="Blog.html">Blog</a></li>
               <li><a href="About.html">AboutUs</a></li>
               <li><a href="Contact.html">Contact</a></li>
                </div>
-               <div>
+               <div class="secondSide">
               <li><a href="Checkout.html">CheckOut</a></li>
               <li><a href="MyAccount.html">MyAccount</a></li>
               <!-- <li id="lg-bag"><a href="Cart.html" onclick="goToCart()"><i class="far fa-shopping-bag"></i></a>cart</li> -->
@@ -67,31 +72,28 @@
                </div>
                <div>
               <a href="#" id="close"><i class="far fa-times"></i></a>
-              <div class="flex-slider">
-                <p class="dark-mode movedarkmode">Darkmode</p>
-                <div class="toggle changeToggleColor">
-                  <span class="round"></span>
-              </div>
-             </div>                   </div>
+                              
+            </div>
           </div>
-          
             </ul>
             
          </div>
          <div id="mobile">
-          <a class="shiftDown" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCountMobile">0</span></a>
-          <i id="bar" class="fas fa-outdent"></i>
+            <a class="shiftDown active" href="./cart.html" onclick="goToPage('cart')">Cart <span id="cartCountMobile">0</span></a>
+            <i id="bar" class="fas fa-outdent"></i>
          </div>
 
     </section>
+   
 <!-- Add a class to the quantity span for easier targeting -->
 <div id="cartPage">
     <h1 class="orderH1">Ordered items</h1>
-    <div id="cartItems"></div>
+    <div id="cartItems"><p></p></div>
     <p class="totalPrice">Total Price: ₦<span id="totalPrice">0.00</span></p>
+    <button class="cart-button" onclick="deleteAllItems()">Delete All Items</button>
     <button class="cart-button" onclick="goToShopPage()">Go to Shopping</button>
     <button class="cart-button" onclick="checkout()">Checkout</button>
-  </div>
+</div>
   
            <!-- footer -->
  <footer>
