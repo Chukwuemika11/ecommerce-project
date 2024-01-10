@@ -1045,7 +1045,7 @@ input[type="submit"] {
    justify-content: space-between;
    margin: 30px;
    padding: 80px;
-   border: 1px solid #e1e1e1;
+   border: none;
 }
 
 #form-details form{
@@ -1574,6 +1574,10 @@ footer {
     padding: 0px 30px;
 }
 
+#form-details {
+    border: none;
+}
+
 /* cart */
 .cartLink{
     padding-left: 30px;
@@ -1970,6 +1974,7 @@ justify-content: center;
  margin: 10px;
  padding: 30px 10px;
  flex-wrap: wrap;
+ border: none;
 }
 
 #form-details form{
