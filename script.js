@@ -226,19 +226,24 @@ function goToshopPage(){
  let cartItems = [];
 
  function addToCart(itemText, itemPrice, itemImage) {
-  
- const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
+  // Check if the total quantity is already 100 or more
+  if (calculateTotalQuantity() >= 100) {
+      alert('You can have a maximum of 100 items in your cart.');
+      return; // Prevent further addition if the limit is reached
+  }
+
+  const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
 
   if (existingItem) {
-    existingItem.quantity++;
+      existingItem.quantity++;
   } else {
-    const newItem = {
-      text: itemText,
-      price: itemPrice,
-      image: itemImage,
-      quantity:1
-    };
-    cartItems.push(newItem);
+      const newItem = {
+          text: itemText,
+          price: itemPrice,
+          image: itemImage,
+          quantity: 1
+      };
+      cartItems.push(newItem);
   }
 
   updateCartCount();
@@ -295,27 +300,46 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
   const quantityInput = inputElement || document.querySelector(`.cartItem:nth-child(${index + 1}) .quantity-input`);
   let newQuantity = parseInt(quantityInput.value, 10);
 
-  if (isNaN(newQuantity) || newQuantity < 1) {
-    newQuantity = 1;
+  if (isNaN(newQuantity) || newQuantity < 0) {
+      newQuantity = 0;
   }
 
-  if (newQuantity === 1 && action === 'minus') {
-    // Do nothing when trying to decrease from 1 to avoid negative values
+  // Calculate the new total quantity
+  const updatedTotalQuantity = calculateTotalQuantity() - cartItems[index].quantity + newQuantity;
+
+  // Check if the updated total quantity exceeds 100
+  if (updatedTotalQuantity > 100) {
+      const confirmMessage = 'You have exceeded the maximum allowed total items in your cart (100). Do you want to reduce the quantity or clear the cart?';
+      const shouldClearCart = confirm(confirmMessage);
+
+      if (shouldClearCart) {
+          // Clear the cartItems array
+          cartItems = [];
+          newQuantity = 0; // Reset the quantity to 0
+      } else {
+          return; // If not clearing cart, prevent further reduction
+      }
+  }
+
+  if (newQuantity === 0) {
+      // If the quantity is set to zero, remove the item from the cart
+      cartItems.splice(index, 1);
   } else {
-    if (action === 'plus') {
-      newQuantity++;
-    } else if (action === 'minus' && newQuantity > 1) {
-      newQuantity--;
-    }
+      if (action === 'plus') {
+          newQuantity++;
+      } else if (action === 'minus' && newQuantity > 0) {
+          newQuantity--;
+      }
 
-    quantityInput.value = newQuantity;
-    cartItems[index].quantity = newQuantity;
-
-    updateCartCount();
-    saveCartToLocalStorage();
-    displayCartItems();
+      quantityInput.value = newQuantity;
+      cartItems[index].quantity = newQuantity;
   }
+
+  updateCartCount();
+  saveCartToLocalStorage();
+  displayCartItems(); // Update the display of cart items
 }
+
 
 function removeFromCart(index) {
   cartItems.splice(index, 1);

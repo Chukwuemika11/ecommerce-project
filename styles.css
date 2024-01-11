@@ -522,8 +522,8 @@ footer {
 }
   
   .cartItem .quantity-controls .quantity-input {
-    width: 30px; /* Adjust the width as needed */
-  }
+    width: 40px;
+}
   .delete-icon{
     padding-left: 20px;
     cursor: pointer;
