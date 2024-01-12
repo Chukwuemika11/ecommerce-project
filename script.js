@@ -229,21 +229,22 @@ function goToshopPage(){
   const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
 
   if (existingItem) {
-      existingItem.quantity = 0; // Start from 0 when reducing items in the cart
-      existingItem.quantity++;
+    existingItem.quantity++;
   } else {
-      const newItem = {
-          text: itemText,
-          price: itemPrice,
-          image: itemImage,
-          quantity: 1
-      };
-      cartItems.push(newItem);
+    const newItem = {
+      text: itemText,
+      price: itemPrice,
+      image: itemImage,
+      quantity: 1
+    };
+    cartItems.push(newItem);
   }
 
   updateCartCount();
   saveCartToLocalStorage();
+  displayCartItems();
 }
+
 
 
 function updateCartCount() {
@@ -331,7 +332,7 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
         break; // Exit the loop when the user clears the item
       } else {
         const newQuantityInput = prompt(`Total items you added: ${initialTotalQuantity}. 
-            // Total items in your cart: ${updatedTotalQuantity}. 
+            Total items in your cart: ${updatedTotalQuantity}. 
             Enter a new quantity that fits within 100 items including this item "${cartItems[index].text}":`);
         newQuantity = parseInt(newQuantityInput, 10);
 
