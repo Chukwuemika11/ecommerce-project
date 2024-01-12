@@ -506,9 +506,9 @@ footer {
 }
 
 #cartPage .cart-button {
-    margin-left: 10px; /* Adjust margin as needed */
+    margin-left: 0px;
+    margin-bottom: 10px;
 }
-
 
   .cartItem .quantity-controls {
     display: flex;

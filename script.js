@@ -229,21 +229,33 @@ function goToshopPage(){
   const existingItem = cartItems.find(item => item.text === itemText && item.image === itemImage);
 
   if (existingItem) {
-    existingItem.quantity++;
+    // Check if incrementing the quantity will exceed the limit
+    if (calculateTotalQuantity() + 1 <= 100) {
+      existingItem.quantity++;
+    } else {
+      alert("You have reached the maximum allowed total items in your cart (100).");
+    }
   } else {
-    const newItem = {
-      text: itemText,
-      price: itemPrice,
-      image: itemImage,
-      quantity: 1
-    };
-    cartItems.push(newItem);
+    // Check if adding a new item will exceed the limit
+    if (calculateTotalQuantity() + 1 <= 100) {
+      const newItem = {
+        text: itemText,
+        price: itemPrice,
+        image: itemImage,
+        quantity: 1
+      };
+      cartItems.push(newItem);
+    } else {
+      alert("You have reached the maximum allowed total items in your cart (100).");
+    }
   }
 
   updateCartCount();
   saveCartToLocalStorage();
   displayCartItems();
 }
+
+
 
 
 
@@ -297,15 +309,18 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
   const quantityInput = inputElement || document.querySelector(`.cartItem:nth-child(${index + 1}) .quantity-input`);
   let newQuantity = parseInt(quantityInput.value, 10);
 
-  if (isNaN(newQuantity) || newQuantity < 1) {
-    newQuantity = 1;
+  if (isNaN(newQuantity) || newQuantity < 0) {
+    newQuantity = 0;
   }
 
   // Store the total quantity before the user starts editing
   const initialTotalQuantity = calculateTotalQuantity();
 
   while (true) {
-    if (newQuantity === 1 && action === 'minus') {
+    if (newQuantity === 0) {
+      // Exit the loop if the user sets the quantity to 0
+      break;
+    } else if (newQuantity === 1 && action === 'minus') {
       // Do nothing when trying to decrease from 1 to avoid negative values
     } else {
       if (action === 'plus') {
@@ -323,24 +338,22 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
       break; // Exit the loop when the total is within 100
     } else {
       const userDecision = confirm(`You have exceeded the maximum allowed total items in your cart (100). 
-          Total items in your cart: ${initialTotalQuantity}. 
-          Do you want to reduce the quantity or clear the item from your cart?`);
+        Total items in your cart: ${initialTotalQuantity}. 
+        Do you want to reduce the quantity or clear the item from your cart?`);
 
       if (userDecision) {
         quantityInput.value = 0;
         cartItems[index].quantity = 0;
         break; // Exit the loop when the user clears the item
       } else {
-        const newQuantityInput = prompt(`Total items you added: ${initialTotalQuantity}. 
-            Total items in your cart: ${updatedTotalQuantity}. 
-            Enter a new quantity that fits within 100 items including this item "${cartItems[index].text}":`);
+        const newQuantityInput = prompt(`Total items in your cart: ${initialTotalQuantity}. 
+          Enter a new quantity that fits within 100 items including this item "${cartItems[index].text}":`);
         newQuantity = parseInt(newQuantityInput, 10);
 
-        if (!isNaN(newQuantity) && newQuantity > 0 && newQuantity <= 100) {
+        if (!isNaN(newQuantity) && newQuantity >= 0 && newQuantity <= 100) {
           // Continue the loop with the updated quantity
         } else {
-          alert('Please enter a valid quantity that fits within 100 items 😂.');
-          continue; // Continue the loop if the user enters an invalid quantity
+          alert('Please enter a valid quantity that fits within 100 items 🙏.');
         }
       }
     }
@@ -350,8 +363,6 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
   saveCartToLocalStorage();
   displayCartItems();
 }
-
-
 
 function removeFromCart(index) {
   cartItems.splice(index, 1);
