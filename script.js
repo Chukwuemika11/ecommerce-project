@@ -353,7 +353,7 @@ function updateQuantityInCart(itemId, action, index, inputElement) {
         if (!isNaN(newQuantity) && newQuantity >= 0 && newQuantity <= 100) {
           // Continue the loop with the updated quantity
         } else {
-          alert('Please enter a valid quantity that fits within 100 items 🙏.');
+          alert('Please enter a valid quantity that fits within 100 items 🥹.');
         }
       }
     }
