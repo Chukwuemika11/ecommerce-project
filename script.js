@@ -508,12 +508,23 @@ function submitForm() {
 const toggle = document.querySelector('.toggle');
 const changeToggleColor = document.querySelector('.changeToggleColor');
 const round = document.querySelector('.round');
-let isDarkMode = false;
+let isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+// Set initial dark mode state
+updateDarkMode();
 
 toggle.addEventListener('click', function () {
   isDarkMode = !isDarkMode;
 
-  if (isDarkMode === true) {
+  // Update dark mode state
+  updateDarkMode();
+
+  // Save dark mode state to localStorage
+  localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+});
+
+function updateDarkMode() {
+  if (isDarkMode) {
     document.body.style.backgroundColor = 'hsl(230, 17%, 14%)';
     round.style.left = '27.5px'; // Adjust as needed for the new position
   } else {
@@ -521,98 +532,15 @@ toggle.addEventListener('click', function () {
     round.style.left = '2.5px'; // Return to the original position
   }
 
-  changeToggleColor.style.backgroundColor = isDarkMode? '#088178' : '#000';
+  changeToggleColor.style.backgroundColor = isDarkMode ? '#088178' : '#000';
 
-  //  for des
-  const desElements = document.querySelectorAll(".des");
+  // Update styles for other elements based on dark mode state
+  const elementsToUpdate = document.querySelectorAll('.des, .containerAbout h1,.li-top, .containerAbout p, .blogImage p, #cartItems, [id="contact-details"], .text-content p, [id="form-details"], .spanFormDetails, .colorDark, .blogMainText, .content, .shoeText, .darkmodeColor, .orderH1, .totalPrice');
 
-desElements.forEach((des) => {
-  des.style.color = isDarkMode ? "#ccc" : "#000";
-});
+  elementsToUpdate.forEach((element) => {
+    element.style.color = isDarkMode ? '#ccc' : '#000';
+  });
+}
 
-const cartItems = document.querySelectorAll("#cartItems");
-
-cartItems.forEach((cartItems) => {
-  cartItems.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-// #contact-details
-
-const contactDetailsElements = document.querySelectorAll('[id="contact-details"]');
-
-contactDetailsElements.forEach((element) => {
-  element.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-const textContentElements = document.querySelectorAll('.text-content p');
-
-textContentElements.forEach((element) => {
-  element.style.color = isDarkMode ? '#ccc' : '#000';
-});
-
-const formDetails =  document.querySelectorAll('[id="form-details"]');
-
-formDetails.forEach((element) => {
-  element.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-
-const spanFormDetails = document.querySelectorAll(".spanFormDetails");
-
-spanFormDetails.forEach((spanFormDetails) => {
-  spanFormDetails.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-
-const contactph2Color = document.querySelectorAll(".colorDark");
-
-contactph2Color.forEach((colorDark) => {
-  colorDark.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-const blogMainText = document.querySelectorAll(".blogMainText");
-
-blogMainText.forEach((blogMainText) => {
-  blogMainText.style.color = isDarkMode ? "#fff" : "#000";
-});
-
-const content = document.querySelectorAll(".content");
-
-content.forEach((content) => {
-  content.style.color = isDarkMode ? "#fff" : "#000";
-});
-
-const shoeText = document.querySelectorAll(".shoeText");
-
-shoeText.forEach((shoeText) => {
-  shoeText.style.color = isDarkMode ? "#fff" : "#000";
-});
-
-const darkmodeColor = document.querySelectorAll(".darkmodeColor");
-
-darkmodeColor.forEach((darkmodeColor) => {
-  darkmodeColor.style.color = isDarkMode ? "#088178" : "#000";
-});
-
-
-
-const order = document.querySelectorAll(".orderH1");
-
-order.forEach((orderH1) => {
-  orderH1.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-
-const Price = document.querySelectorAll(".totalPrice");
-
-Price.forEach((totalPrice) => {
-  totalPrice.style.color = isDarkMode ? "#ccc" : "#000";
-});
-
-// const footerElements = document.querySelectorAll("footer");
-
-// footerElements.forEach((footer) => {
-//   footer.style.backgroundColor = isDarkMode ? "#333" : "#fff";
-// });
-
-});
+// Call the function to apply styles during initial page load
+updateDarkMode();
