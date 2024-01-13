@@ -125,21 +125,22 @@
         <section class="featured-products">
         <h1>featured Products</h1>
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Select from drop down..." onfocus="showDropdown()">
-            <div id="categoryDropdown" class="dropdown-content">
+            <input type="text" id="searchInput" placeholder="Select from drop down..." readonly onclick="handleSearchClick()">
+            <div id="categoryDropdown" class="dropdown-content" style="display: none;">
                 <a href="#" data-target="shoes">Shoes</a>
                 <a href="#" data-target="clothes">Clothes</a>
                 <a href="#" data-target="jewelry">Jewelries</a>
                 <a href="#" data-target="food">Food</a>
                 <a href="#" data-target="sport-wears">Sport Wears</a>
-                <a href="#" data-target="culiniary-delights">culiniary delights</a>
-                <a href="#" data-target="drinks">drinks and water</a>
-                <a href="#" data-target="others">others</a>
-                <a href="#" data-target="new-arrivals">new Arrivals</a>
-                <a href="#" data-target="back-to-school-deals">back To School Deals</a>
+                <a href="#" data-target="culinary-delights">Culinary Delights</a>
+                <a href="#" data-target="drinks">Drinks and Water</a>
+                <a href="#" data-target="others">Others</a>
+                <a href="#" data-target="new-arrivals">New Arrivals</a>
+                <a href="#" data-target="back-to-school-deals">Back To School Deals</a>
                 <a href="#" data-target="coming-soon-page">Coming Soon</a>
             </div>
         </div>
+        
     
         <div id="shoes" class="category">
             <h2>Shoes</h2>
