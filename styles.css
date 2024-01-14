@@ -518,7 +518,9 @@ footer {
   
   .cartItem .quantity-controls .quantity-btn {
     width: 20px;
-    color: green;
+    color: rgb(48, 47, 47);
+    background-color: rgb(95, 121, 119);
+    font-size: 20px;
 }
   
   .cartItem .quantity-controls .quantity-input {

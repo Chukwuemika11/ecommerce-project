@@ -528,14 +528,14 @@ function updateDarkMode() {
     document.body.style.backgroundColor = 'hsl(230, 17%, 14%)';
     round.style.left = '27.5px'; // Adjust as needed for the new position
   } else {
-    document.body.style.backgroundColor = '#ffffff';
+    document.body.style.backgroundColor = '#f1f1f1';
     round.style.left = '2.5px'; // Return to the original position
   }
 
   changeToggleColor.style.backgroundColor = isDarkMode ? '#088178' : '#000';
 
   // Update styles for other elements based on dark mode state
-  const elementsToUpdate = document.querySelectorAll('.des, .containerAbout h1,.li-top, .containerAbout p, .blogImage p, #cartItems, [id="contact-details"], .text-content p, [id="form-details"], .spanFormDetails, .colorDark, .blogMainText, .content, .shoeText, .darkmodeColor, .orderH1, .totalPrice');
+  const elementsToUpdate = document.querySelectorAll('.des,.containerAbout h1,.li-top, .containerAbout p, .blogImage p, #cartItems, [id="contact-details"], .text-content p, [id="form-details"], .spanFormDetails, .colorDark, .blogMainText, .content, .shoeText, .darkmodeColor, .orderH1, .totalPrice');
 
   elementsToUpdate.forEach((element) => {
     element.style.color = isDarkMode ? '#ccc' : '#000';
