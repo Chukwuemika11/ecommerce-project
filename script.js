@@ -258,10 +258,6 @@ function goToshopPage(){
   displayCartItems();
 }
 
-
-
-
-
 function updateCartCount() {
   // For desktop
   document.getElementById('cartCountDesktop').innerText = calculateTotalQuantity();

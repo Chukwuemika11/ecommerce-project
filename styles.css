@@ -53,9 +53,16 @@
    color: #088178;
 }
 
-.logoName:hover{
+.logo{
+    width: 105px;
+     height: 25px;
+}
+
+/* Add this to your stylesheet */
+.logoName:hover {
     color: #20938c;
 }
+
 
 .movedarkmode{
     padding-left: none;
