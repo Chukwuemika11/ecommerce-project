@@ -432,6 +432,14 @@ footer {
     margin-bottom: 8px;
 }
 
+.emailMessage {
+    color:#088178 ;
+}
+
+.emailMessage:hover{
+    color: #479a93;
+}
+
 /* Quick Links styling */
 .quick-links ul {
     list-style-type: none;
@@ -1087,6 +1095,24 @@ input[type="submit"] {
   padding-top: 25px;
 }
 
+.icon{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon a {
+    margin-right: 10px; /* Adjust the value as needed */
+}
+
+
+.icon a:hover {
+   color: #088178;
+}
+
+footer a:hover {
+    color: #088178;
+ }
+
 #form-details .people div img {
     width: 65px;
     height: 65px;
@@ -1327,8 +1353,8 @@ footer {
     background-color: #f4f4f4;
     background-color: #7fb0ac;
     padding: 20px;
-    display: block;
-   
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -1718,7 +1744,8 @@ footer {
     padding: 20px 10px;
 }
 footer{
-    padding: none;
+    padding: 2px 5px;
+    justify-content: space-between;
 }
 
 .movedarkmode {
@@ -1732,8 +1759,9 @@ footer{
 
 .footer-section {
     /* max-width: 200px; */
-    padding: 20px 30px;
-    width: 100%;
+    padding: 20px 0px;
+    /* padding: 20px 30px; */
+    /* width: 100%; */
 }
 
 #scrollToTopContainer {
@@ -2122,7 +2150,14 @@ justify-content: center;
       
       @media screen and (min-width: 1350px) and (min-height: 1800px) {
         /* Your styles for Surface Duo go here */
-        
-        
+            
     }
     
+    .arrangeSection{
+        padding: 20px 20px;
+        font-size: 16px;
+    }
+
+    .arrangeSection section{
+        padding-top: 20px;
+    }

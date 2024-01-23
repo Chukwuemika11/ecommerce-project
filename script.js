@@ -531,11 +531,16 @@ function updateDarkMode() {
   changeToggleColor.style.backgroundColor = isDarkMode ? '#088178' : '#000';
 
   // Update styles for other elements based on dark mode state
-  const elementsToUpdate = document.querySelectorAll('.des,.containerAbout h1,.li-top, .containerAbout p, .blogImage p, #cartItems, [id="contact-details"], .text-content p, [id="form-details"], .spanFormDetails, .colorDark, .blogMainText, .content, .shoeText, .darkmodeColor, .orderH1, .totalPrice');
+  const elementsToUpdate = document.querySelectorAll('.des,.containerAbout h1, .arrangeSection p, .arrangeSection h2,.li-top, .containerAbout p, .blogImage p, #cartItems, [id="contact-details"], .text-content p, [id="form-details"], .spanFormDetails, .colorDark, .blogMainText, .content, .shoeText, .darkmodeColor, .orderH1, .totalPrice');
 
   elementsToUpdate.forEach((element) => {
     element.style.color = isDarkMode ? '#ccc' : '#000';
   });
+
+  // const arrange = document.querySelectorAll("arrangeSection");
+  // arrange.forEach((element) => {
+  //   element.style.color = isDarkMode ? '#ccc' : '#000';
+  // });
 }
 
 // Call the function to apply styles during initial page load
